@@ -1,5 +1,6 @@
 package controller;
 
+import core.Main;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -32,28 +33,11 @@ public class OnlineController {
     @FXML
     Label lastupdate;
 
-    public static JSONArray readJsonFromUrl(String url) throws IOException {
-        URL obj = new URL(url);
-        HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-        con.setRequestMethod("GET");
-        con.setRequestProperty("User-Agent", "Mozilla/5.0");
-        int responseCode = con.getResponseCode();
-        BufferedReader in = new BufferedReader(
-                new InputStreamReader(con.getInputStream()));
-        String inputLine;
-        StringBuffer response = new StringBuffer();
-        while ((inputLine = in.readLine()) != null) {
-            response.append(inputLine);
-        }
-        in.close();
-        JSONArray myResponse = new JSONArray((response.toString()));
-        return myResponse;
-    }
 
 
     public   ObservableList<pairs> getdata() throws IOException {
         ObservableList<pairs> values = FXCollections.observableArrayList();
-        jsonarray = readJsonFromUrl("https://api.abucoins.com/products/ticker");
+        jsonarray = Main.readJsonFromUrl("https://api.abucoins.com/products/ticker");
         pairs addthis = new pairs();
 
         for (Object o : jsonarray) {
