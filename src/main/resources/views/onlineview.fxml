@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root prefHeight="500.0" prefWidth="543.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.OnlineController">
+   <children>
+      <TableView fx:id="tableview" layoutX="14.0" layoutY="122.0" prefHeight="313.0" prefWidth="522.0" />
+
+      <Label layoutX="272.0" layoutY="77.0" text="Last update at:" />
+      <Label fx:id="lastupdate" layoutX="371.0" layoutY="77.0" prefHeight="17.0" prefWidth="150.0" />
+   </children>
+</fx:root>

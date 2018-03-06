@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="466.0" prefWidth="695.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.adminController">
+   <children>
+     <BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="466.0" prefWidth="695.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+       <left>
+         <ToolBar fx:id="sidebar" orientation="VERTICAL" prefHeight="466.0" prefWidth="139.0" BorderPane.alignment="CENTER">
+           <items>
+                  <Pane fx:id="sidebar2" prefHeight="454.0" prefWidth="139.0">
+                     <children>
+                   <Button layoutY="35.0" mnemonicParsing="false" onAction="#onBtnHomeClick" prefHeight="41.0" prefWidth="140.0" text="Convert" />
+                   <Button layoutY="85.0" mnemonicParsing="false" onAction="#onBtnOnlineviewClick" prefHeight="41.0" prefWidth="140.0" text="Online view " />
+                        <Label layoutX="35.0" layoutY="423.0" text="Paweł Szwed" />
+                        <Label layoutX="55.0" layoutY="6.0" text="Menu" />
+                        <Button layoutY="135.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="140.0" text="More features " />
+                        <Button layoutY="185.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="140.0" text="More features " />
+                     </children>
+                  </Pane>
+           </items>
+         </ToolBar>
+       </left>
+         <center>
+            <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="543.0" BorderPane.alignment="CENTER" />
+         </center>
+     </BorderPane>
+   </children>
+</AnchorPane>
