@@ -12,7 +12,6 @@ import java.math.BigDecimal;
 public class pairs {
 
     public pairs(){
-
     }
 
     @Getter @Setter
