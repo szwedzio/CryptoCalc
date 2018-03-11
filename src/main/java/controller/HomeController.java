@@ -99,7 +99,27 @@ public class HomeController {
                                     jsonlookingfor.getString("product_id").split("-")[1].equals(b) &&
                                             jsonlookingfor.getString("product_id").split("-")[0].equals(lookingforA)
                                     ) {
-                                
+
+                                if (json.getString("product_id").split("-")[0].equals(a)) {
+                                    calcs = json.getBigDecimal("price").multiply(amountBD);
+                                } else {
+                                    calcs = BigDecimal.ONE.divide(json.getBigDecimal("price"), 50, RoundingMode.HALF_DOWN).multiply(amountBD);
+                                }
+                                if (jsonlookingfor.getString("product_id").split("-")[1].equals(b) &&
+                                        jsonlookingfor.getString("product_id").split("-")[0].equals(lookingforA)) {
+                                    calcs = jsonlookingfor.getBigDecimal("price").multiply(calcs);
+                                    //JEŻELI CHCEMY PIERWSZE POŁĄCZENIE NALEŻY ODKOMENTOWAĆ BREAK JEŻELI CHCEMY NAJLEPSZĄ KONWERCJE NALEŻY ZOSTAWIĆ
+                                    //WARUNEK VALUE
+
+                                    if (calcs.compareTo(end) == 1)
+                                        result.setText(amountBD + " " + a + " => " + calcs + " " + b);
+                                    //break;
+                                } else {
+                                    calcs = BigDecimal.ONE.divide(jsonlookingfor.getBigDecimal("price"), 50, RoundingMode.HALF_DOWN).multiply(calcs);
+                                    if (calcs.compareTo(end) == 1)
+                                        result.setText(amountBD + " " + a + " => " + calcs + " " + b);
+                                    //break;
+                                }
 
                             } else {
                             }
